@@ -1,4 +1,4 @@
 jbudget
 =======
 
-a simple all to help manage budgets
+A SIMPLE js app to help manage budgets.
