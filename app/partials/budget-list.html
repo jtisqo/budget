@@ -1,0 +1,14 @@
+<h1>My budgets...</h1>
+
+<ul>
+	<li ng-repeat="budget in budgets">
+		<a href="#/budget/{{budget.slug}}">{{budget.title}}</a>
+	</li>
+	<li>
+		<form ng-submit="budgets.add()">
+			<input type="text" ng-model="new_budget_title" placeholder="This should create a new budget" />
+		</form>
+	</li>
+</ul>
+
+<p>The name of the new budget should be: {{new_budget_title}}</p>
