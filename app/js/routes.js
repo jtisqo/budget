@@ -1,7 +1,8 @@
-define(['angular', 'app'], function(angular, app) {
-	'use strict';
-
-	return app.config(['$routeProvider', function($routeProvider) {
+angular.module('budgetApp', [])
+	.config(['$compileProvider', function ($compileProvider) {
+        $compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+    }])
+	.config(['$routeProvider', function($routeProvider) {
 		
 		$routeProvider.
 			when('/budgets', {
@@ -15,5 +16,3 @@ define(['angular', 'app'], function(angular, app) {
 
 		$routeProvider.otherwise({redirectTo: '/budgets'});
 	}]);
-
-});
