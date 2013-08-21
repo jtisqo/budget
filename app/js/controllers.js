@@ -32,9 +32,11 @@ angular.module('budgetApp.controllers', ['budgetApp.services'])
 		$scope.new_budget_title = "";
 
 		$scope.budgets.add = function () {
-			//$scope.budgets.push({
-			//});
-			console.log($scope.new_budget_title);
+			$scope.budgets.push({
+				slug: 'test',
+				title: $scope.new_budget_title
+			});
+			$scope.new_budget_title = "";
 		}
 
 	}])
