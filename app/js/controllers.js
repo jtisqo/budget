@@ -1,27 +1,49 @@
-define(['angular', 'services'], function (angular) {
-	'use strict';
+angular.module('budgetApp.controllers', ['budgetApp.services'])
+	// Sample controller where service is being used
+	.controller('ctlBudgetList', ['$scope', function ($scope) {
+		
+		$scope.budgets = [
+			{
+				slug: "budget_1",
+				title: "Budget 1"
+			},
+			{
+				slug: "budget_2",
+				title: "Budget 2"
+			},
+			{
+				slug: "budget_3",
+				title: "Budget 3"
+			},
+			{
+				slug: "budget_4",
+				title: "Budget 4"
+			},
+			{
+				slug: "budget_5",
+				title: "Budget 5"
+			},
+			{
+				slug: "budget_6",
+				title: "Budget 6"
+			}
+		];
 
-	return angular.module('budgetApp.controllers', ['budgetApp.services'])
-		// Sample controller where service is being used
-		.controller('ctlBudgetList', ['$scope', function ($scope) {
-			require(['controllers/ctlBudgetList'], function(ctlBudgetList) {
+		$scope.new_budget_title = "";
 
-				// injector method takes an array of modules as the first argument
-				// if you want your controller to be able to use components from
-				// any of your other modules, make sure you include it together with 'ng'
-				// Furthermore we need to pass on the $scope as it's unique to this controller
-				angular.injector(['ng']).invoke(ctlBudgetList, this, {'$scope': $scope});
-
+		$scope.budgets.add = function () {
+			$scope.budgets.push({
+				slug: 'test',
+				title: $scope.new_budget_title
 			});
-		}])
-		// More involved example where controller is required from an external file
-		.controller('MyCtrl2', ['$scope', function($scope) {
-			require(['controllers/myctrl2'], function(myctrl2) {
-				// injector method takes an array of modules as the first argument
-				// if you want your controller to be able to use components from
-				// any of your other modules, make sure you include it together with 'ng'
-				// Furthermore we need to pass on the $scope as it's unique to this controller
-				angular.injector(['ng']).invoke(myctrl2, this, {'$scope': $scope});
-			});
-		}]);
-});
+			$scope.new_budget_title = "";
+		}
+
+	}])
+	// More involved example where controller is required from an external file
+	.controller('MyCtrl2', ['$scope', function($scope) {
+		
+		// You can access the scope of the controller from here
+		$scope.welcomeMessage = 'hey this is myctrl2.js!';
+		
+	}]);
