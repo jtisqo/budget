@@ -8,11 +8,11 @@ angular.module('budgetApp', ['budgetApp.controllers', 'budgetApp.filters', 'budg
 		
 		$routeProvider.
 			when('/budgets', {
-				templateUrl: '/app/partials/budget-list.html',
+				templateUrl: 'app/partials/budget-list.html',
 				controller: 'ctlBudgetList'
 			}).
 			when('/budgets/:id', {
-				templateUrl: '/app/partials/budget.html',
+				templateUrl: 'app/partials/budget.html',
 				controller: 'ctrl-budget'
 			}).
 			otherwise({redirectTo: '/budgets'});

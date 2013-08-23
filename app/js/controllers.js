@@ -36,6 +36,7 @@ angular.module('budgetApp.controllers', ['budgetApp.services'])
 				slug: 'test',
 				title: $scope.new_budget_title
 			});
+			console.log('pushed');
 			$scope.new_budget_title = "";
 		}
 
