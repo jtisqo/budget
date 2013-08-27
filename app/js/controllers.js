@@ -1,7 +1,6 @@
 angular.module('budgetApp.controllers', ['budgetApp.services'])
 	// Sample controller where service is being used
-	.controller('ctlBudgetList', ['$scope', function ($scope) {
-		
+	.controller('ctlBudgetList', ['$scope', 'Slug', function ($scope, Slug) {
 		$scope.budgets = [
 			{
 				slug: "budget_1",
@@ -32,11 +31,12 @@ angular.module('budgetApp.controllers', ['budgetApp.services'])
 		$scope.new_budget_title = "";
 
 		$scope.budgets.add = function () {
-			$scope.budgets.push({
-				slug: 'test',
+			var new_budget = {
+				slug: Slug.slugify($scope.new_budget_title),
 				title: $scope.new_budget_title
-			});
-			console.log('pushed');
+			}
+
+			$scope.budgets.push(new_budget);
 			$scope.new_budget_title = "";
 		}
 
