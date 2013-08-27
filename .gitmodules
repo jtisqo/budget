@@ -1,3 +1,1 @@
-[submodule "app/js/lib/angular-slugify"]
-	path = app/js/lib/angular-slugify
-	url = https://github.com/paulsmith/angular-slugify.git
+
