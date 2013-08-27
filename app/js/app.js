@@ -1,4 +1,4 @@
-angular.module('budgetApp', ['budgetApp.controllers', 'budgetApp.filters', 'budgetApp.services', 'budgetApp.directives'])
+angular.module('budgetApp', ['budgetApp.controllers', 'budgetApp.filters', 'budgetApp.services', 'budgetApp.directives', 'slugifier'])
 	
 	.config(['$compileProvider', function ($compileProvider) {
         $compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
