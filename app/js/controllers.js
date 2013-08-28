@@ -1,4 +1,4 @@
-angular.module('budgetApp.controllers', ['budgetApp.services'])
+angular.module('budgeteer.controllers', ['budgeteer.services'])
 	// Sample controller where service is being used
 	.controller('ctlBudgetList', ['$scope', 'Slug', function ($scope, Slug) {
 		$scope.budgets = [
