@@ -2,6 +2,10 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+        if(config.env == 'local'){
+            $('html').attr('ng-app', 'budgetApp');
+        }
+        
     },
     // Bind Event Listeners
     //
@@ -19,6 +23,9 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        if(config.env != 'local'){
+            $('html').attr('ng-app', 'budgetApp');
+        }
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
