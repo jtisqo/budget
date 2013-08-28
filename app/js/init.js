@@ -3,7 +3,7 @@ var app = {
     initialize: function() {
         this.bindEvents();
         if(config.env == 'local'){
-            $('html').attr('ng-app', 'budgeteer');
+            this.bootstrapAngular();
         }
         
     },
@@ -24,7 +24,7 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         if(config.env != 'local'){
-            $('html').attr('ng-app', 'budgeteer');
+            this.bootstrapAngular();
         }
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
@@ -34,5 +34,11 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+    
+    bootstrapAngular: function(){
+        console.log('bootstraping angular......');
+        $('html').attr('ng-app', 'budgeteer');
+        console.log('html ng-app attribute: '+$('html').attr('ng-app'));
     }
 };
