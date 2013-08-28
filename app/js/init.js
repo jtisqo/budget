@@ -3,7 +3,7 @@ var app = {
     initialize: function() {
         this.bindEvents();
         if(config.env == 'local'){
-            $('html').attr('ng-app', 'budgetApp');
+            $('html').attr('ng-app', 'budgeteer');
         }
         
     },
@@ -24,7 +24,7 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         if(config.env != 'local'){
-            $('html').attr('ng-app', 'budgetApp');
+            $('html').attr('ng-app', 'budgeteer');
         }
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
