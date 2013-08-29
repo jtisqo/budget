@@ -1,3 +1,3 @@
 var config = {
-	env: ''
+	env: 'local'
 };

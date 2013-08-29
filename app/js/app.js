@@ -7,13 +7,13 @@ angular.module('budgeteer', ['budgeteer.controllers', 'budgeteer.filters', 'budg
 	.config(['$routeProvider', function($routeProvider) {
 		
 		$routeProvider.
-			when('/budgets', {
+			when('/', {
 				templateUrl: 'app/partials/budget-list.html',
-				controller: 'ctlBudgetList'
+				controller: 'budget-list'
 			}).
 			when('/budgets/:id', {
 				templateUrl: 'app/partials/budget.html',
-				controller: 'ctrl-budget'
+				controller: 'budget'
 			}).
-			otherwise({redirectTo: '/budgets'});
+			otherwise({redirectTo: '/'});
 	}]);

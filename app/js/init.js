@@ -37,11 +37,15 @@ var app = {
         }
     },
     
+    /**
+     * Bootstrap angularjs and remove logo
+     */
     bootstrapAngular: function(){
-        console.log('bootstraping angular......');
         angular.element(document).ready(function() {
             angular.bootstrap(document, ['budgeteer']);
+            $('.init-screen').fadeOut(1000, function() {
+                $('.budgeteer').show();
+            });
         });
-        console.log('html ng-app attribute: '+$('html').attr('ng-app'));
     }
 };
