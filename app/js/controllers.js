@@ -1,6 +1,6 @@
 angular.module('budgeteer.controllers', ['budgeteer.services'])
-	// Sample controller where service is being used
-	.controller('ctlBudgetList', ['$scope', 'Slug', function ($scope, Slug) {
+	
+	.controller('budget-list', ['$scope', 'Slug', function ($scope, Slug) {
 		$scope.budgets = [
 			{
 				slug: "budget_1",
@@ -41,10 +41,10 @@ angular.module('budgeteer.controllers', ['budgeteer.services'])
 		}
 
 	}])
-	// More involved example where controller is required from an external file
-	.controller('MyCtrl2', ['$scope', function($scope) {
+
+	.controller('budget', ['$scope', function($scope) {
 		
 		// You can access the scope of the controller from here
-		$scope.welcomeMessage = 'hey this is myctrl2.js!';
+		$scope.budget_name = 'hey this is myctrl2.js!';
 		
 	}]);
